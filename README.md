@@ -6,7 +6,7 @@ Team Members:
 
 1) First name: Judy , Last name: Kalenga, York Email: jmkal@my.yorku.ca Lecture Section: M, Lab Section: 3,
 2) First name: Ammar, Last name: Rafiqui, York Email: ammarr58@my.yorku.ca, Lecture Section: M, Lab Section: 3
-3) First name: Abdul Wasay, Last name: Faizan, York Email: awasay67@my.yorku.ca, Lecture Section: M, Lab Section: 3
+3) First name: Abdul Wasay, Last name: Faizan, York Email: awasay67@my.yorku.ca, Lecture Section: M, Lab Section: 2
 4) First name: Fletcher, Last name: Lorenzo, York Email: fletch22@my.yorku.ca, Lecture Section: M, Lab Section: 3
 
 
