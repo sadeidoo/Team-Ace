@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">AdivinaEseNúmero</string>
+    <string name="play_game">Jugar Juego</string>
+    <string name="guess_that_number">¡Adivina ese número!</string>
+    <string name="leaderboard">Tabla de Clasificación</string>
+    <string name="options">Opciones</string>
+    <string name="enter_your_number">Entra tu Numero:</string>
+    <string name="chances_remaining">Oportunidades Restantes</string>
+    <string name="play">Jugar</string>
+    <string name="guess_that_number_between_x_and_x">¡Adivina el número entre X y X!</string>
+    <string name="go_back">Regresa</string>
+    <string name="gamemode_2">Modo de Juego #2</string>
+    <string name="gamemode_1">Modo de Juego #1</string>
+    <string name="gamemode_3">Modo de Juego #3</string>
+    <string name="gamemode_4">Modo de Juego #4</string>
+    <string name="settings">Ajustes</string>
+    <string name="languages">Idiomas</string>
+    <string name="themes">Temas</string>
+    <string name="regular">normal</string>
+    <string name="dark">oscura</string>
+    <string name="light">ligera</string>
+    <string name="guess_the_number">Adivina el Número</string>
+</resources>
