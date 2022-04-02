@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">DevinezCeNuméro</string>
+    <string name="play_game">Jouer au Jeu</string>
+    <string name="guess_that_number">Devinez ce Numéro!</string>
+    <string name="leaderboard">Tableau des Scores</string>
+    <string name="options">Options</string>
+    <string name="enter_your_number">Entrez votre Numéro:</string>
+    <string name="chances_remaining">Chances qui Reste</string>
+    <string name="play">Jouer</string>
+    <string name="guess_that_number_between_x_and_x">Devinez ce nombre entre X et X !</string>
+    <string name="go_back">Retourner</string>
+    <string name="gamemode_2">Mode de Jeu 2</string>
+    <string name="gamemode_1">Mode de Jeu 1</string>
+    <string name="gamemode_3">Mode de Jeu 3</string>
+    <string name="gamemode_4">Mode de Jeu 4</string>
+    <string name="settings">Réglages</string>
+    <string name="languages">Langues</string>
+    <string name="themes">Thèmes</string>
+    <string name="regular">habituel</string>
+    <string name="dark">sombre</string>
+    <string name="light">lumière</string>
+    <string name="guess_the_number">Devinez le Nombre</string>
+</resources>
