@@ -1,0 +1,88 @@
+package com.example.guessthatnumber;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
+import android.content.Intent;
+import android.content.res.Resources;
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class Gamemodes extends AppCompatActivity {
+    private Button pickGameModeButton;
+    MediaPlayer music;
+
+    //new variables:
+    Context context;
+    Resources resources;
+    Button gameMode1, gameMode2, gameMode3, gameMode4;
+    int lang_selected;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_gamemodes);
+
+        gameMode1 = (Button) findViewById(R.id.playGameMode1);
+        gameMode2 = (Button) findViewById(R.id.playGameMode2);
+        gameMode3 = (Button) findViewById(R.id.playGameMode3);
+        gameMode4 = (Button) findViewById(R.id.playGameMode4);
+        TextView settings = (TextView)findViewById(R.id.Settings); //Setting text
+
+        //not sure if this will work but my idea was that all the other classes would depend on Settings to determine which set of strings to use
+        //might need to add the language button to main activity view so language is loaded first thing
+
+        if (settings.getText().equals("Settings")) { //if Settings text is in English, set all strings in Gamemodes view to English
+            context = LocaleHelper.setLocale(Gamemodes.this,"en"); //ensures English strings are used
+            resources = context.getResources();
+            lang_selected = 0;
+            //strings that change: all 4 of the game mode button texts
+            gameMode1.setText(resources.getString(R.string.gamemode_1));
+            gameMode2.setText(resources.getString(R.string.gamemode_2));
+            gameMode3.setText(resources.getString(R.string.gamemode_3));
+            gameMode4.setText(resources.getString(R.string.gamemode_4));
+
+        }else if(settings.getText().equals("Réglages")){ //if Settings text is in French, set all strings in Gamemodes view to French
+            context = LocaleHelper.setLocale(Gamemodes.this,"fr"); //ensures French strings are used
+            resources =context.getResources();
+            lang_selected = 1;
+            gameMode1.setText(resources.getString(R.string.gamemode_1));
+            gameMode2.setText(resources.getString(R.string.gamemode_2));
+            gameMode3.setText(resources.getString(R.string.gamemode_3));
+            gameMode4.setText(resources.getString(R.string.gamemode_4));
+
+        } else if(settings.getText().equals("Ajustes")){ //if Settings text is in Spanish, set all strings in Gamemodes view to Spanish
+            context = LocaleHelper.setLocale(Gamemodes.this,"es"); //ensures Spanish strings are used
+            resources =context.getResources();
+            lang_selected = 2;
+            gameMode1.setText(resources.getString(R.string.gamemode_1));
+            gameMode2.setText(resources.getString(R.string.gamemode_2));
+            gameMode3.setText(resources.getString(R.string.gamemode_3));
+            gameMode4.setText(resources.getString(R.string.gamemode_4));
+        }
+
+        pickGameModeButton = (Button) findViewById(R.id.playGameMode1);
+        music = MediaPlayer.create(Gamemodes.this, R.raw.spiritblossom);
+        music.setLooping(true);
+        music.start();
+        pickGameModeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openPickGameMode();
+            }
+        });
+    }
+    public void openPickGameMode() {
+        Intent intent = new Intent(this, PlayGame.class);
+        startActivity(intent);
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        music.release();
+        finish();
+    }
+}
