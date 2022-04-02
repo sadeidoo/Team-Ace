@@ -17,6 +17,8 @@ import android.widget.TextView;
 public class Settings extends AppCompatActivity {
     private Button openThemesButton;
     MediaPlayer music;
+    
+    //new variables:
     TextView dialog_language, setting;
     Button themes;
     int lang_selected;
