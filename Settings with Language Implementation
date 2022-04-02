@@ -1,0 +1,153 @@
+package com.example.guessthatnumber;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.res.Resources;
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+public class Settings extends AppCompatActivity {
+    private Button openThemesButton;
+    MediaPlayer music;
+    TextView dialog_language, setting;
+    Button themes;
+    int lang_selected;
+    RelativeLayout show_lan_dialog;
+    Context context;
+    Resources resources;
+    
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_settings);
+
+        dialog_language = (TextView)findViewById(R.id.dialog_language);
+        setting =(TextView)findViewById(R.id.Settings);
+        show_lan_dialog = (RelativeLayout)findViewById(R.id.showlangdialog);
+        themes = (Button)findViewById(R.id.Themes);
+
+        //method to retrieve language the app was last saved to
+        //this block of code needs to occur as soon as the UI gets loaded and variables have been initialized
+        //if language is set to English:
+        if(LocaleHelper.getLanguage(Settings.this).equalsIgnoreCase("en"))
+        {
+            context = LocaleHelper.setLocale(Settings.this,"en"); //ensures English strings are used
+            resources = context.getResources();
+            lang_selected = 0;
+            //strings that change: app title, settings, themes, and the text on the language button
+            dialog_language.setText("ENGLISH");
+            setting.setText(resources.getString(R.string.settings));
+            themes.setText(resources.getString(R.string.themes));
+            setTitle(resources.getString(R.string.app_name));
+
+        }else if(LocaleHelper.getLanguage(Settings.this).equalsIgnoreCase("fr")){ //if language is set to French:
+            context = LocaleHelper.setLocale(Settings.this,"fr"); //ensures French strings are used
+            resources =context.getResources();
+            lang_selected = 1;
+            dialog_language.setText("FRANÇAIS");
+            setting.setText(resources.getString(R.string.settings));
+            themes.setText(resources.getString(R.string.themes));
+            setTitle(resources.getString(R.string.app_name));
+        }
+        else if(LocaleHelper.getLanguage(Settings.this).equalsIgnoreCase("es")){ //if language is set to Spanish:
+            context = LocaleHelper.setLocale(Settings.this,"es"); //ensures Spanish strings are used
+            resources =context.getResources();
+            lang_selected = 2;
+            dialog_language.setText("ESPAGNOL");
+            setting.setText(resources.getString(R.string.settings));
+            themes.setText(resources.getString(R.string.themes));
+            setTitle(resources.getString(R.string.app_name));
+        }
+
+        //method to set language
+        //when the relative layout (Language button) is pressed, dialog box is displayed
+        show_lan_dialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //list of languages showed in the dialog box
+                final String[] Language = {"ENGLISH","FRANÇAIS","ESPAGNOL"};
+
+                //create dialog box
+                final AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(Settings.this); //dialog appears in the Setting view
+                dialogBuilder.setTitle("Select a Language") //title of dialog box
+                        //ensures only one language is selected at a time
+                        .setSingleChoiceItems(Language, lang_selected, new DialogInterface.OnClickListener() {
+                            @Override //what happens when a user selects a language
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialog_language.setText(Language[i]);
+
+                                //if user selects English
+                                if(Language[i].equals("ENGLISH")){
+                                    context = LocaleHelper.setLocale(Settings.this,"en"); //ensures English strings are used
+                                    resources = context.getResources();
+                                    lang_selected = 0;
+                                    //Strings that are changed: app title, theme and setting text
+                                    setting.setText(resources.getString(R.string.settings));
+                                    themes.setText(resources.getString(R.string.themes));
+                                    setTitle(resources.getString(R.string.app_name));
+                                }
+
+                                //if user selects French
+                                if(Language[i].equals("FRANÇAIS"))
+                                {
+                                    context = LocaleHelper.setLocale(Settings.this,"fr"); //ensures French strings are used
+                                    resources =context.getResources();
+                                    lang_selected = 1;
+                                    setting.setText(resources.getString(R.string.settings));
+                                    themes.setText(resources.getString(R.string.themes));
+                                    setTitle(resources.getString(R.string.app_name));
+                                }
+
+                                //if user selects Spanish
+                                if(Language[i].equals("ESPAGNOL"))
+                                {
+                                    context = LocaleHelper.setLocale(Settings.this,"es"); //ensures Spanish strings are used
+                                    resources =context.getResources();
+                                    lang_selected = 2;
+                                    setting.setText(resources.getString(R.string.settings));
+                                    themes.setText(resources.getString(R.string.themes));
+                                    setTitle(resources.getString(R.string.app_name));
+                                }
+                            }
+                        })
+                        //ok button at the bottom right corner of the language drop down menu
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.dismiss();
+                            }
+                        });
+                dialogBuilder.create().show(); //will show dialog box to user
+            }
+        });
+
+        openThemesButton = (Button) findViewById(R.id.Themes);
+        music = MediaPlayer.create(Settings.this, R.raw.cinematicatmospherescore);
+        music.setLooping(true);
+        music.start();
+        openThemesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openThemes();
+            }
+        });
+    }
+    public void openThemes() {
+        Intent intent = new Intent(this, Themes.class);
+        startActivity(intent);
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        music.release();
+        finish();
+    }
+}
