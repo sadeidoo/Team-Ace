@@ -1,0 +1,58 @@
+package com.example.guessthatnumber;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
+import android.content.res.Resources;
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.widget.TextView;
+
+public class Leaderboard extends AppCompatActivity {
+    MediaPlayer music;
+    Context context;
+    Resources resources;
+    TextView leaderBoard;
+    int lang_selected;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_leaderboard);
+
+        leaderBoard = (TextView)findViewById(R.id.guessThatNumber);
+        TextView settings = (TextView)findViewById(R.id.Settings); //Setting text
+
+        if (settings.getText().equals("Settings")) { //if Settings text is in English, set all strings in leaderboard view to English
+            context = LocaleHelper.setLocale(Leaderboard.this,"en"); //ensures English strings are used
+            resources = context.getResources();
+            lang_selected = 0;
+            //strings that change: leaderboard text
+            leaderBoard.setText(resources.getString(R.string.leaderboard));
+
+        }else if (settings.getText().equals("Réglages")){ //if Settings text is in French, set all strings in leaderboard view to French
+            context = LocaleHelper.setLocale(Leaderboard.this,"fr"); //ensures French strings are used
+            resources =context.getResources();
+            lang_selected = 1;
+            leaderBoard.setText(resources.getString(R.string.leaderboard));
+        }
+        else if (settings.getText().equals("Ajustes")){ //if Settings text is in Spanish, set all strings in leaderboard view to Spanish
+            context = LocaleHelper.setLocale(Leaderboard.this,"es"); //ensures Spanish strings are used
+            resources =context.getResources();
+            lang_selected = 2;
+            leaderBoard.setText(resources.getString(R.string.leaderboard));
+        }
+
+
+        music = MediaPlayer.create(Leaderboard.this, R.raw.everythingfeelsnew);
+        music.setLooping(true);
+        music.start();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        music.release();
+        finish();
+    }
+}
