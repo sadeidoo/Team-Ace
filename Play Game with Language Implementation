@@ -1,0 +1,64 @@
+package com.example.guessthatnumber;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
+import android.content.res.Resources;
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.widget.TextView;
+
+public class PlayGame extends AppCompatActivity {
+    MediaPlayer music;
+    
+    //new variables:
+    Context context;
+    Resources resources;
+    int lang_selected;
+    TextView enterYourNumber, chancesRemaining;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_play_game);
+
+        enterYourNumber = (TextView)findViewById(R.id.heightLabel);
+        chancesRemaining = (TextView)findViewById(R.id.chancesRemaining);
+        TextView settings = (TextView)findViewById(R.id.Settings); //Setting text
+
+        if (settings.getText().equals("Settings")) { //if Settings text is in English, set all strings in PlayGame view to English
+            context = LocaleHelper.setLocale(PlayGame.this,"en"); //ensures English strings are used
+            resources = context.getResources();
+            lang_selected = 0;
+            //strings that change: enter your number, chances remaining
+            enterYourNumber.setText(resources.getString(R.string.enter_your_number));
+            chancesRemaining.setText(resources.getString(R.string.chances_remaining));
+
+
+        }else if(settings.getText().equals("Réglages")){ //if Settings text is in French, set all strings in PlayGame view to French
+            context = LocaleHelper.setLocale(PlayGame.this,"fr"); //ensures French strings are used
+            resources =context.getResources();
+            lang_selected = 1;
+            enterYourNumber.setText(resources.getString(R.string.enter_your_number));
+            chancesRemaining.setText(resources.getString(R.string.chances_remaining));
+        }
+        else if(settings.getText().equals("Ajustes")){ //if Settings text is in Spanish, set all strings in PlayGame view to Spanish
+            context = LocaleHelper.setLocale(PlayGame.this,"es"); //ensures Spanish strings are used
+            resources =context.getResources();
+            lang_selected = 2;
+            enterYourNumber.setText(resources.getString(R.string.enter_your_number));
+            chancesRemaining.setText(resources.getString(R.string.chances_remaining));
+        }
+
+        music = MediaPlayer.create(PlayGame.this, R.raw.thecradleofyoursoul);
+        music.setLooping(true);
+        music.start();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        music.release();
+        finish();
+    }
+}
