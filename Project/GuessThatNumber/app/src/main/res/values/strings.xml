@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">GuessThatNumber</string>
+    <string name="play_game">Play Game</string>
+    <string name="guess_that_number">Guess That Number</string>
+    <string name="leaderboard">Leaderboard</string>
+    <string name="options">Options</string>
+    <string name="enter_your_number">Enter Your Number:</string>
+    <string name="chances_remaining">Chances Remaining</string>
+    <string name="play">Play</string>
+    <string name="guess_that_number_between_x_and_x">Guess That Number Between X and X !</string>
+    <string name="go_back">Go Back</string>
+    <string name="gamemode_2">Gamemode # 2</string>
+    <string name="gamemode_1">Gamemode # 1</string>
+    <string name="gamemode_3">Gamemode # 3</string>
+    <string name="gamemode_4">Gamemode # 4</string>
+    <string name="settings">Settings</string>
+    <string name="languages">Languages</string>
+    <string name="themes">Themes</string>
+    <string name="regular">regular</string>
+    <string name="dark">Dark</string>
+    <string name="light">light</string>
+    <string name="guess_the_number">Guess The Number</string>
+    <string name="choose_the_larger_number">Choose The Larger Number</string>
+    <string name="hot_amp_cold"><![CDATA[Hot & Cold]]></string>
+    <string name="randomizer">Randomizer</string>
+    <string name="the_keen_observer">The Keen Observer</string>
+    <string name="one_chance">One Chance</string>
+    <string name="enter">Enter</string>
+    <string name="enter_a_number_between_1_and_5">Enter A Number Between 1 And 5</string>
+    <string name="title_activity_display_message" />
+</resources>

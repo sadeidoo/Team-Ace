@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradientpurple"
+    tools:context=".MainActivity">
+
+<!--    <TextView-->
+<!--        android:id="@+id/guessThatNumber"-->
+<!--        android:layout_width="221dp"-->
+<!--        android:layout_height="170dp"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginHorizontal="80dp"-->
+<!--        android:layout_marginVertical="100dp"-->
+<!--        android:layout_marginEnd="-74dp"-->
+<!--        android:text="@string/guess_the_number"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="50sp"-->
+<!--        android:textStyle="bold" />-->
+
+    <Button
+        android:id="@+id/playGameButton"
+        android:layout_width="298dp"
+        android:layout_height="99dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="240dp"
+        android:backgroundTint="#582AD1"
+        android:text="@string/play"
+        android:textColor="@color/white"
+        android:textSize="55sp"
+        tools:ignore="OnClick,UsingOnClickInXml" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="230dp"
+        android:layout_height="255dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="476dp"
+        app:srcCompat="@drawable/guessthenumber" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="215dp"
+        android:layout_height="300dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="174dp"
+        android:layout_marginBottom="361dp"
+        app:srcCompat="@drawable/logowiz" />
+
+</RelativeLayout>

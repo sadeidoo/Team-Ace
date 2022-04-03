@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradientpurple"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/guessThatNumber"
+        android:layout_width="294dp"
+        android:layout_height="127dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginHorizontal="80dp"
+        android:layout_marginVertical="100dp"
+        android:layout_marginEnd="55dp"
+        android:text="@string/leaderboard"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

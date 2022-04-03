@@ -1,0 +1,37 @@
+Algorithm guessThatNumber(attempts, guess)
+Pre-conditions: both variables are integer value; number of attempts should not exceed __, and guessed values must be between 1 and 30
+Post-conditions: "Congratulations, you won!" is outputted if guess is the same as the answer, and "Sorry, you lose." is outputted if the number of attempts is exceeded.
+   Input 2 integer values
+   Output string value
+
+   answer <- random integer between 1 & 30 is assigned
+   //i <- 0
+
+   for i to attempts-1 do
+      if guess = answer then
+         output <- "Congratulations, you won!"
+      else if i = attempts then
+         output <- "Sorry, you lose."   
+      else
+         print "Incorrect. Try again!"
+         guess <- new input (integer value) is assigned 
+         //i <- i + 1
+
+   return output
+      
+
+
+Algorithm chancesRemaining(attempts)
+Pre-conditions: input is an integer value; number of attempts should not exceed __
+Post-conditions: Number of attempts remaining after each try is returned
+   Input 1 integer value
+   Output 1 integer value
+   
+   //i <- 0
+
+   for i to attempts-1 do
+      remainingAttempts <- attempts
+      return remainingAttempts
+      remainingAttempts <- remainingAttempts - 1
+      //i <- i + 1
+   

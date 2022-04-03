@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.guessthatnumber">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GuessThatNumber">
+        <activity
+            android:name=".PlayGame4"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            />
+        <activity
+            android:name=".PlayGame3"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".PlayGame2"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".LocaleHelper"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".Themes"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Settings"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Leaderboard"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Gamemodes"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".PlayGame"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradientpurple"
+    tools:context=".MainActivity"
+    android:parentActivityName=".mainactivity"
+    >
+
+    <!--    <Button-->
+<!--        android:id="@+id/playGameMode2"-->
+<!--        android:layout_width="289dp"-->
+<!--        android:layout_height="63dp"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginHorizontal="30dp"-->
+<!--        android:layout_marginVertical="250dp"-->
+<!--        android:layout_marginEnd="50dp"-->
+<!--        android:layout_marginBottom="45dp"-->
+<!--        android:backgroundTint="#582AD1"-->
+<!--        android:text="@string/randomizer"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="25sp"-->
+<!--        tools:ignore="OnClick,UsingOnClickInXml" />-->
+
+    <Button
+        android:id="@+id/playGameMode1"
+        android:layout_width="289dp"
+        android:layout_height="63dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="250dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="45dp"
+        android:backgroundTint="#582AD1"
+        android:text="@string/hot_amp_cold"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        tools:ignore="OnClick,UsingOnClickInXml" />
+
+    <Button
+        android:id="@+id/playGameMode3"
+        android:layout_width="290dp"
+        android:layout_height="66dp"
+        android:layout_alignTop="@+id/playGameMode1"
+        android:layout_alignParentEnd="true"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="100dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginBottom="45dp"
+        android:backgroundTint="#582AD1"
+        android:text="@string/the_keen_observer"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        tools:ignore="OnClick,UsingOnClickInXml" />
+
+    <Button
+        android:id="@+id/playGameMode4"
+        android:layout_width="289dp"
+        android:layout_height="63dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="450dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="45dp"
+        android:backgroundTint="#582AD1"
+        android:text="@string/one_chance"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        tools:ignore="OnClick,UsingOnClickInXml" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/gamemodesBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="320dp"
+        android:layout_marginBottom="643dp"
+        android:backgroundTint="#6200FF"
+        android:contentDescription="@string/go_back"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
+
+</RelativeLayout>
